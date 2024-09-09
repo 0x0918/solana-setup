@@ -9,7 +9,9 @@ WORKDIR /work
 
 RUN sh -c "$(curl -sSfL https://release.solana.com/v1.17.3/install)"
 
-RUN npm install -g yarn && npm i -g @project-serum/anchor-cli
+RUN npm config set proxy null && npm config set https-proxy null && \
+    npm install -g yarn && npm i -g @project-serum/anchor-cli
+    
 RUN cargo install --git https://github.com/project-serum/anchor --tag v0.24.2 anchor-cli --locked
 
 RUN mkdir -p /root/.config/solana

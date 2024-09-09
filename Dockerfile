@@ -14,6 +14,5 @@ RUN cargo install --git https://github.com/project-serum/anchor --tag v0.24.2 an
 
 RUN mkdir -p /root/.config/solana
 ENV PATH="/root/.local/share/solana/install/active_release/bin:${PATH}"
-# RUN solana-keygen new --silent --no-bip39-passphrase -o /root/.config/solana/id.json
 
 CMD /bin/zsh
